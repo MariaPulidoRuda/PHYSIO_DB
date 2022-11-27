@@ -1,18 +1,19 @@
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
-const Admin = require('./admin.model');
+const Admin = require("./admin.model");
 const { setError } = require("../../helpers/error/handle.error");
 
 const register = async (req, res, next) => {
   try {
-
-  console.log(req.body)
+    console.log(req.body);
     const newAdmin = new Admin(req.body);
-    console.log(newAdmin)
-    const adminDuplicate = await Admin.findOne({ adminName: newAdmin.adminName });
-console.log(adminDuplicate)
-    if (adminDuplicate) return next('Admin already exists')
+    console.log(newAdmin);
+    const adminDuplicate = await Admin.findOne({
+      adminName: newAdmin.adminName,
+    });
+    console.log(adminDuplicate);
+    if (adminDuplicate) return next("Admin already exists");
 
     const newAdminDB = newAdmin.save();
     return res.json({
