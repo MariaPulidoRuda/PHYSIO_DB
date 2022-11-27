@@ -7,7 +7,7 @@ const getDoctors = async (req, res, next) => {
 const doctors = await Doctor.find()
 return res.json({
     status: 200,
-    message: 'Recovered all Dcotors',
+    message: 'Recovered all Doctors',
     data: { doctors }
 })
     } catch (error) {
@@ -40,12 +40,17 @@ const postDoctor = async (req, res, next) => {
     } catch (error) {
 
     }
-}
+};
+
 const patchDoctor = async (req, res, next) => {
     try {
         const { id } = req.params;
         const doctor = new Doctor(req.body);
-        actor._id = id;
+        if (req.file) {
+            doctor._id = id;
+            doctor._id.image = req.file.path;
+        }
+        
         const updateDoctor = await Doctor.findByIdAndUpdate(id, doctor);
         return res.status(200).json(updateDoctor);
     } catch (error) {
