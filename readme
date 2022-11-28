@@ -1,4 +1,8 @@
+Este proyecto está basado en la simulación de una base de datos de una clínica de fisioterapia. En ella se encontrarán los datos de los pacientes, sus 
+respectivas citas, los doctores, y por supuesto el rol de los adminstradores, que serán los encargados de gestionar todos los datos. Serán éstos los creen 
+todas las fichas de los pacientes y los doctores, pudiéndoles asignar fechas, datos personales, modificación o eliminación de datos, etc. 
+
 Para obtener una experiencia más visual del proyecto y poder entenderlo mejor, os invito a que entréis en el siguiente 
 enlace, https://leeward-viper-ef1.notion.site/Explaining-a-Node-Project-5efeefde2e1f4b23a313d6e87c33bec3
-en el que se desarrolla el proyecto de una manera más clara y concisa, con fotos y vídeos
+en el que se desarrolla el proyecto de una manera más clara y concisa, con fotos y vídeos.
 
